@@ -83,6 +83,8 @@ class yii2textareaautosize extends InputWidget
         Html::addCssClass($this->_displayOptions, 'element-' . $this->options['id']);
         Html::addCssClass($this->_displayOptions, 'form-control');
         $this->_displayOptions['rows'] = 1;
+        if (isset($this->options['placeholder']))
+            $this->_displayOptions['placeholder'] = $this->options['placeholder'];
         $input = Html::activeTextarea($this->model, $this->attribute, $this->_displayOptions);
         echo $input;
     }
